@@ -1,4 +1,4 @@
-# EvercamMisc
+# Evercam Miscellaneous
 
 This gem library contains collections of code and classes that may find use
 across multiple components within the Evercam infrastructure.

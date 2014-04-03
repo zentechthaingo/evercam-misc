@@ -21,7 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake", "~> 10.2"
 
-  spec.add_dependency "3scale_client"
+  spec.add_dependency "3scale_client", "~> 2.3"
   spec.add_dependency "dotenv", "~> 0.10"
   spec.add_dependency "sidekiq", "~> 2.17"
 end
