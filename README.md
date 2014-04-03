@@ -1,29 +1,22 @@
 # EvercamMisc
 
-TODO: Write a gem description
+This gem library contains collections of code and classes that may find use
+across multiple components within the Evercam infrastructure.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'evercam_misc'
+    gem 'evercam_misc', git: 'git@github.com:evercam/evercam_misc.git'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install evercam_misc
-
 ## Usage
 
-TODO: Write usage instructions here
+Once you've established a dependency in your Gemfile then you can make use of
+the code and classes within the library using a general require statement like
+the following...
 
-## Contributing
-
-1. Fork it ( http://github.com/[my-github-username]/evercam_misc/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+    require 'evercam_misc'
