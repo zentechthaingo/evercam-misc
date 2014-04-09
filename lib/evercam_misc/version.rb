@@ -1,5 +1,5 @@
 # Copyright (c) 2014, Evercam.io
 
 module EvercamMisc
-  VERSION = "0.0.2"
+  VERSION = "0.0.3"
 end

@@ -23,5 +23,4 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "3scale_client", "~> 2.3"
   spec.add_dependency "dotenv", "~> 0.10"
-  spec.add_dependency "sidekiq", "~> 3.0"
 end
