@@ -64,19 +64,13 @@ module Evercam
     end
 
     def self.status_code
-      501
+      503
     end
   end
 
   class OutcomeError < EvercamError
-    def initialize(outcome, message=nil, code=nil, *context)
+    def initialize(message=nil, code=nil, *context)
       super(message, self.class.status_code, code, *context)
-      @outcome = outcome
-    end
-
-    def message
-      @outcome.errors.message_list.
-        map(&:downcase)
     end
 
     def self.status_code
