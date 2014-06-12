@@ -20,7 +20,7 @@ module Evercam
         name  = self.class.name.split("::").last
         match = nil
         while !(match = /[A-Z]/.match(name)).nil?
-          name.gsub(match[0], "#{match.offset(0)[0] != 0 ? '_' : ''}#{match[0].downcase}")
+          name.gsub!(match[0], "#{match.offset(0)[0] != 0 ? '_' : ''}#{match[0].downcase}")
         end
       else
         @code
