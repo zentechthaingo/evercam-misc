@@ -2,7 +2,7 @@
 
 module Evercam
   class EvercamError < StandardError
-    def initialize(message=nil, status=400, code=nil, *context)
+    def initialize(message=nil, code=nil, status=400, *context)
       super(message)
       @status_code = status
       @code        = code
@@ -30,7 +30,7 @@ module Evercam
 
   class AuthenticationError < EvercamError
     def initialize(message=nil, code=nil, *context)
-      super((message || "Unauthenticated"), self.class.status_code, code, *context)
+      super((message || "Unauthenticated"), code, self.class.status_code, *context)
     end
 
     def self.status_code
@@ -40,7 +40,7 @@ module Evercam
 
   class AuthorizationError < EvercamError
     def initialize(message=nil, code=nil, *context)
-      super((message || "Unauthorized"), self.class.status_code, code, *context)
+      super((message || "Unauthorized"), code, self.class.status_code, *context)
     end
 
     def self.status_code
@@ -50,7 +50,7 @@ module Evercam
 
   class NotFoundError < EvercamError
     def initialize(message=nil, code=nil, *context)
-      super((message || "Not Found"), self.class.status_code, code, *context)
+      super((message || "Not Found"), code, self.class.status_code, *context)
     end
 
     def self.status_code
@@ -60,7 +60,7 @@ module Evercam
 
   class CameraOfflineError < EvercamError
     def initialize(message=nil, code=nil, *context)
-      super((message || "Camera Offline"), self.class.status_code, code, *context)
+      super((message || "Camera Offline"), code, self.class.status_code, *context)
     end
 
     def self.status_code
@@ -70,7 +70,7 @@ module Evercam
 
   class OutcomeError < EvercamError
     def initialize(message=nil, code=nil, *context)
-      super(message, self.class.status_code, code, *context)
+      super(message, code, self.class.status_code, *context)
     end
 
     def self.status_code
@@ -81,7 +81,7 @@ module Evercam
   module WebErrors
     class BadRequestError < EvercamError
       def initialize(message=nil, code=nil, *context)
-        super((message || "Bad Request"), self.class.status_code, code, *context)
+        super((message || "Bad Request"), code, self.class.status_code, *context)
       end
 
       def self.status_code
@@ -91,7 +91,7 @@ module Evercam
 
     class ComingSoonError < EvercamError
       def initialize(message=nil, code=nil, *context)
-        super((message || "Sorry, this method is not implemented yet."), self.class.status_code, code, *context)
+        super((message || "Sorry, this method is not implemented yet."), code, self.class.status_code, *context)
       end
 
       def self.status_code
@@ -101,7 +101,7 @@ module Evercam
 
     class ConflictError < EvercamError
       def initialize(message=nil, code=nil, *context)
-        super((message || "Conflict"), self.class.status_code, code, *context)
+        super((message || "Conflict"), code, self.class.status_code, *context)
       end
 
       def self.status_code
